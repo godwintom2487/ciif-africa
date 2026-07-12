@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIIFA Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lime:#90E040; --green:#46760F; --ink:#111418;
+    --bg:#f5f7f1; --surface:#fff; --fg:#15181d; --muted:#5d6470;
+    --border:#e1e6d9; --chip:#eef3e3;
+    --disp:'Outfit','Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--disp);background:var(--bg);color:var(--fg);line-height:1.6;font-size:16px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  header{background:var(--ink);color:#e8efe0;padding:60px 0 54px}
+  .kicker{font-weight:700;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+  header h1{font-weight:800;font-size:clamp(32px,5vw,52px);margin:10px 0 8px}
+  header p{color:#b9c4b0;max-width:60ch}
+  section{padding:44px 0;border-bottom:1px solid var(--border)}
+  h2{font-weight:800;font-size:27px;margin-bottom:6px}
+  h2 .no{color:var(--green);margin-right:10px}
+  h3{font-weight:700;font-size:18px;margin:26px 0 8px}
+  p.note{color:var(--muted);max-width:70ch;margin-bottom:18px}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:16px 0}
+  .sw{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface)}
+  .sw .col{height:74px}
+  .sw .meta{padding:10px 12px;font-size:12.5px}
+  .sw .meta b{display:block;font-size:13.5px}
+  .sw .meta code{color:var(--muted);font-family:Consolas,monospace;font-size:12px}
+  table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;font-size:14.5px;margin:14px 0}
+  th{background:var(--chip);font-weight:700;text-align:left;padding:10px 14px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+  td{padding:10px 14px;border-top:1px solid var(--border);vertical-align:top}
+  .pill{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:700;font-size:12px}
+  .typespec{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;margin:14px 0}
+  .typespec .lab{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .dd{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+  @media(max-width:640px){.dd{grid-template-columns:1fr}}
+  .dd div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;font-size:14.5px}
+  .dd b{display:block;margin-bottom:8px;font-size:15px}
+  .dd .yes b{color:var(--green)}
+  .dd .no2 b{color:#c0392b}
+  .dd ul{margin-left:18px}
+  .dd li{margin-bottom:6px}
+  .notice{background:var(--chip);border:1px solid var(--border);border-left:4px solid var(--lime);border-radius:10px;padding:14px 18px;font-size:14.5px;margin:18px 0}
+  footer{padding:30px 0 50px;color:var(--muted);font-size:13px}
+  @media print{ body{background:#fff} header{-webkit-print-color-adjust:exact;print-color-adjust:exact} .sw .col,.pill,th{-webkit-print-color-adjust:exact;print-color-adjust:exact} section{page-break-inside:avoid} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Brand Guide · v1.0 · July 2026</div>
+    <h1>CIIFA</h1>
+    <p>Creative Industries Initiative for Africa — visual identity and document standards. One system for the website, decks, documents, spreadsheets and everything the world sees.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2><span class="no">01</span>The brand in one paragraph</h2>
+    <p class="note">CIIFA builds the systems that turn African creative talent into an industry. The brand should feel the way the work feels: <strong>institutional confidence with creative energy</strong> — dark, calm, serious surfaces lit by a single electric lime. Never corporate-beige, never carnival. One accent, used with discipline, is the whole trick. The official tagline: <strong>"Driving Africa's Creative Economy Forward."</strong></p>
+    <h3>The logo</h3>
+    <p class="note" style="margin-bottom:10px">The CIIFA lockup: "CIIF" wordmark with the lime Africa glyph completing the "A", over "CREATIVE INDUSTRIES INITIATIVE FOR AFRICA" in letterspaced caps. The Africa glyph's lime <code>#90E040</code> is the master accent of this whole system. Use the black-text version on light surfaces and the light-text version on Ink; never recolour the glyph.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:stretch">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px 28px;display:flex;align-items:center"><img src="ciifa-logo.png" alt="CIIFA logo on light" style="height:64px;width:auto"></div>
+      <div style="background:#111418;border-radius:12px;padding:22px 28px;display:flex;align-items:center"><img src="../site/assets/img/ciifa-logo-dark.png" alt="CIIFA logo on dark" style="height:64px;width:auto"></div>
+    </div>
+    <div class="notice" style="margin-top:14px"><strong>Source note:</strong> these files were extracted from CIIFA letterhead (raster, 481×173). For print and large-format use, request the original vector (AI/SVG) master from the design source and replace <code>ciifa-logo.png</code> / <code>ciifa-logo-dark.png</code> in the site assets.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="no">02</span>Colour</h2>
+    <h3>Core palette</h3>
+    <div class="swatches">
+      <div class="sw"><div class="col" style="background:#90E040"></div><div class="meta"><b>CIIFA Lime</b><code>#90E040</code>Master accent. Graphic use only.</div></div>
+      <div class="sw"><div class="col" style="background:#46760F"></div><div class="meta"><b>Deep Green</b><code>#46760F</code>Text-level emphasis &amp; links on light.</div></div>
+      <div class="sw"><div class="col" style="background:#111418"></div><div class="meta"><b>Ink</b><code>#111418</code>Dark surfaces, heroes, footers, decks.</div></div>
+      <div class="sw"><div class="col" style="background:#f5f7f1;border-bottom:1px solid #e1e6d9"></div><div class="meta"><b>Paper</b><code>#f5f7f1</code>Light page background.</div></div>
+      <div class="sw"><div class="col" style="background:#ffffff;border-bottom:1px solid #e1e6d9"></div><div class="meta"><b>Surface</b><code>#ffffff</code>Cards &amp; panels on Paper.</div></div>
+      <div class="sw"><div class="col" style="background:#5d6470"></div><div class="meta"><b>Muted</b><code>#5d6470</code>Secondary text on light.</div></div>
+    </div>
+    <h3>Dark-mode neutrals</h3>
+    <div class="swatches">
+      <div class="sw"><div class="col" style="background:#0e110b"></div><div class="meta"><b>Dark bg</b><code>#0e110b</code></div></div>
+      <div class="sw"><div class="col" style="background:#161a12"></div><div class="meta"><b>Dark surface</b><code>#161a12</code></div></div>
+      <div class="sw"><div class="col" style="background:#e8efe0"></div><div class="meta"><b>Dark-mode text</b><code>#e8efe0</code></div></div>
+      <div class="sw"><div class="col" style="background:#aee36f"></div><div class="meta"><b>Lime tint</b><code>#aee36f</code>Links/emphasis on dark.</div></div>
+    </div>
+    <h3>The one rule that matters</h3>
+    <p class="note"><strong>Lime is a light — not a reading colour.</strong> On white or Paper, lime text fails contrast; use <b style="color:#46760F">Deep Green #46760F</b> for links, emphasis and small graphics on light backgrounds, and save lime for dark surfaces, large shapes, bars and highlights. On Ink, lime can do anything.</p>
+    <h3>Platform accents</h3>
+    <p class="note">Each platform owns one colour, used beside — never instead of — the CIIFA core. Status colours (red <code>#c0392b</code> · amber <code>#b8860b</code> · green <code>#2e7d52</code>) are reserved for RAG/status only.</p>
+    <table>
+      <tr><th>Platform</th><th>Accent</th><th>Hex</th></tr>
+      <tr><td>CBA for Africa</td><td><span class="pill" style="background:#f0b448;color:#111418">Gold</span></td><td><code>#f0b448</code></td></tr>
+      <tr><td>The Skill Pool Initiative</td><td><span class="pill" style="background:#90E040;color:#111418">CIIFA Lime</span></td><td><code>#90E040</code></td></tr>
+      <tr><td>Enterprise Programme</td><td><span class="pill" style="background:#4ade80;color:#111418">Green</span></td><td><code>#4ade80</code></td></tr>
+      <tr><td>Creative Career Fair</td><td><span class="pill" style="background:#3fc1c9;color:#111418">Teal</span></td><td><code>#3fc1c9</code></td></tr>
+      <tr><td>CIIFA SafeHouse</td><td><span class="pill" style="background:#5aa9ff;color:#111418">Sky</span></td><td><code>#5aa9ff</code></td></tr>
+      <tr><td>AMEDI (showcase/festival)</td><td><span class="pill" style="background:#a78bfa;color:#111418">Violet</span></td><td><code>#a78bfa</code></td></tr>
+      <tr><td>The Talent Project</td><td><span class="pill" style="background:#e5484d;color:#fff">Red</span></td><td><code>#e5484d</code></td></tr>
+      <tr><td>Creative Metropolis</td><td><span class="pill" style="background:#6d7cff;color:#fff">Indigo</span></td><td><code>#6d7cff</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="no">03</span>Typography</h2>
+    <p class="note">One family everywhere: <strong>Outfit</strong> (Google Fonts, free). Fallback stack: <code>'Outfit','Segoe UI',system-ui,sans-serif</code>. Where Outfit can't be installed (e.g. shared docs on locked-down machines), Segoe UI is the approved stand-in.</p>
+    <div class="typespec"><div class="lab">Display / H1 — Outfit ExtraBold 800</div><div style="font-weight:800;font-size:40px;line-height:1.1">An industry, built on purpose.</div></div>
+    <div class="typespec"><div class="lab">Heading / H2 — Outfit Bold 700</div><div style="font-weight:700;font-size:26px">Section headings carry the argument</div></div>
+    <div class="typespec"><div class="lab">Kicker / label — Outfit Bold 700 · letterspaced caps</div><div style="font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#46760F">Creative Industries Initiative for Africa</div></div>
+    <div class="typespec"><div class="lab">Body — Outfit Regular 400</div><div style="font-size:16.5px">Body text is Outfit Regular, comfortable line height (1.6), never justified, never below 14px on screen or 10.5pt in print.</div></div>
+    <h3>Document type ramps</h3>
+    <table>
+      <tr><th>Use</th><th>Web</th><th>Word docs</th><th>Decks (16:9)</th></tr>
+      <tr><td>Title / H1</td><td>800 · 40–58px</td><td>SemiBold 20pt</td><td>ExtraBold 36–44pt</td></tr>
+      <tr><td>H2</td><td>800 · 26–34px</td><td>SemiBold 15pt</td><td>Bold 24–28pt</td></tr>
+      <tr><td>H3</td><td>700 · 18–20px</td><td>SemiBold 12.5pt</td><td>Bold 18–20pt</td></tr>
+      <tr><td>Body</td><td>400 · 16–17px</td><td>Regular 11pt</td><td>Regular 14–16pt</td></tr>
+      <tr><td>Caption / meta</td><td>500 · 13px</td><td>Regular 9pt, Muted</td><td>Medium 11–12pt, Muted</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="no">04</span>Applications — every kind of document</h2>
+    <table>
+      <tr><th>Document</th><th>Recipe</th></tr>
+      <tr><td><b>Website</b></td><td>Paper background, white cards, Ink hero and footer, lime accents on dark, Deep Green links on light. Platform pages tint with their accent.</td></tr>
+      <tr><td><b>Decks &amp; presentations</b></td><td>Ink <code>#111418</code> slides, lime titles/accents, off-white text <code>#e8efe0</code>. One accent per slide. Cover: kicker in lime caps, title in ExtraBold white.</td></tr>
+      <tr><td><b>Word docs, proposals, letters</b></td><td>White page, Ink text, Deep Green headings, lime used only in the header rule / footer strip. Header: lockup left, document title right in Muted caps.</td></tr>
+      <tr><td><b>Spreadsheets</b></td><td>Header rows Ink with white text; input cells tinted Chip <code>#eef3e3</code>; totals in Deep Green bold. No rainbow tabs — platform accents only when a tab belongs to a platform.</td></tr>
+      <tr><td><b>Email &amp; signatures</b></td><td>System fonts (Segoe UI/Arial). Name in bold Ink, role in Muted, one Deep Green link line. No images except the logo.</td></tr>
+      <tr><td><b>Social</b></td><td>Ink backgrounds with lime headline type, or full-bleed photography with a lime caption bar. Platform announcements use the platform accent + lime together.</td></tr>
+      <tr><td><b>Certificates</b></td><td>White, generous margins, Ink type, lime seal/rule, platform accent for the programme name. Co-branded with CTF where the programme is CTF × CIIFA.</td></tr>
+    </table>
+    <h3>Naming &amp; attribution</h3>
+    <p class="note">First mention is always the full name: <strong>Creative Industries Initiative for Africa (CIIFA)</strong>, then CIIFA. Programme attributions are fixed phrases: “<em>CBA for Africa — executed by CIIFA for the Creative Talent Foundation</em>”, “<em>CIIFA presents The Skill Pool Initiative</em>”, and co-delivered bootcamps read “<em>Business of Music — delivered with [Partner]</em>”.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="no">05</span>Do &amp; don't</h2>
+    <div class="dd">
+      <div class="yes"><b>Do</b><ul>
+        <li>Use lime sparingly — one accent per composition.</li>
+        <li>Use Deep Green for anything that must be read on white.</li>
+        <li>Let dark surfaces (Ink) carry the drama; keep light pages calm.</li>
+        <li>Pair each platform's accent with the CIIFA core, consistently.</li>
+        <li>Leave whitespace. Institutional means unhurried.</li>
+      </ul></div>
+      <div class="no2"><b>Don't</b><ul>
+        <li>Don't set body text in lime, on any background.</li>
+        <li>Don't mix platform accents in one layout without reason.</li>
+        <li>Don't use amber/red/green status colours decoratively.</li>
+        <li>Don't stretch, recolour or outline the logo (once uploaded).</li>
+        <li>Don't introduce new typefaces or gradients per document.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">CIIFA Brand Guide v1.0 · July 2026 · Source of truth for tokens: CIIFA Operating System — Structure &amp; Workflow Explorer. Questions: info@ciif.africa</div>
+</footer>
+
+</body>
+</html>
