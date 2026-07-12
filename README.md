@@ -1,7 +1,30 @@
 # ciif.africa — public website
 
 The public-facing website connecting the world to CIIFA and its platforms, products and programmes.
-Static multi-page site — no build step, no framework. Open `site/index.html` or serve the `site/` folder from any static host (Netlify, Vercel, GitHub Pages, cPanel).
+Static multi-page site — no build step, no framework.
+
+## Deployment
+
+- **Repo:** https://github.com/godwintom2487/ciif-africa (public)
+- **Staging (live):** https://godwintom2487.github.io/ciif-africa/ — GitHub Pages, served from the
+  `gh-pages` branch (which mirrors `site/`).
+- **Redeploy:** run `.\deploy.ps1 "commit message"` from this folder (commits, regenerates
+  `gh-pages` via `git subtree split --prefix site`, pushes both branches; Pages rebuilds in ~1 min).
+
+### Cutover to ciif.africa (when approved — currently a live WordPress site is on the domain)
+
+1. Set the custom domain on Pages:
+   `gh api -X PUT repos/godwintom2487/ciif-africa/pages -f cname=ciif.africa`
+2. In **Cloudflare DNS** for ciif.africa:
+   - Replace the apex `A`/`AAAA` records (current WordPress host) with `CNAME ciif.africa → godwintom2487.github.io`
+     (Cloudflare flattens CNAME at apex), and set `www` `CNAME → godwintom2487.github.io`.
+   - **Do NOT touch MX / mail records** — @ciif.africa email must keep working.
+   - Set both records to **DNS-only (grey cloud)** until GitHub issues the TLS certificate.
+3. Wait for the certificate on the Pages settings page, then enforce HTTPS:
+   `gh api -X PUT repos/godwintom2487/ciif-africa/pages --field https_enforced=true`
+4. Optional: re-enable the Cloudflare proxy (orange cloud) with SSL mode **Full (strict)**.
+5. Note: the WordPress site remains on its old host, just unreachable via the domain. Export/back
+   it up before or after — nothing on it is deleted by this cutover.
 
 ## Folder map
 
