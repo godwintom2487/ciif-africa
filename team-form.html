@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Team Profile Form — CIIFA</title>
+<meta name="description" content="Build your CIIFA team profile for ciif.africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .formgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start}
+  @media (max-width:900px){.formgrid{grid-template-columns:1fr}}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-family:var(--disp);font-weight:700;font-size:14px;margin-bottom:6px}
+  .field label small{font-weight:500;color:var(--muted)}
+  .field input[type=text],.field input[type=email],.field input[type=url],.field select,.field textarea{
+    width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);
+    color:var(--fg);font:400 15.5px var(--body)}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--lime)}
+  .field textarea{resize:vertical;min-height:88px}
+  .field .hint{font-size:12.5px;color:var(--muted);margin-top:4px}
+  .count{font-size:12px;color:var(--muted);float:right}
+  .checks{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+  @media (max-width:560px){.checks{grid-template-columns:1fr}}
+  .checks label,.agree label{display:flex;gap:9px;align-items:flex-start;font:400 14.5px var(--body);font-family:var(--body);font-weight:400;cursor:pointer}
+  .checks input,.agree input{margin-top:3px;accent-color:var(--green)}
+  fieldset{border:1px solid var(--border);border-radius:12px;padding:18px 20px 8px;margin-bottom:22px;background:var(--surface)}
+  legend{font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:0 8px;color:var(--green)}
+  .preview{position:sticky;top:84px}
+  .pcard{background:var(--ink);border-radius:16px;padding:26px;color:#e8efe0;box-shadow:var(--shadow);border-top:4px solid var(--lime)}
+  .pcard .avatar{width:84px;height:84px;border-radius:50%;background:var(--chip);color:var(--ink);display:flex;align-items:center;justify-content:center;font:800 30px var(--disp);margin-bottom:14px;background:linear-gradient(135deg,#90E040,#46760F);color:#0c0f0a}
+  .pcard h3{font-family:var(--disp);font-weight:800;font-size:22px;color:#fff}
+  .pcard .role{font-family:var(--disp);font-weight:600;font-size:14px;color:var(--lime);margin:2px 0 4px}
+  .pcard .loc{font-size:13px;color:#9aa694;margin-bottom:12px}
+  .pcard .bio{font-size:14.5px;color:#c9d3c0;margin-bottom:12px}
+  .pcard .chips{margin:10px 0}
+  .pcard .chip{background:rgba(144,224,64,.12);border-color:rgba(144,224,64,.3);color:#cfe9b0;font-size:12px;padding:4px 11px}
+  .pcard .links{font-size:13px;color:#9aa694;word-break:break-all}
+  .pcard .hl{font-size:13.5px;color:#c9d3c0;padding-left:16px;margin-top:6px}
+  .pcard .hl li{margin-bottom:3px}
+  .plabel{text-align:center;font:600 12px var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .submitrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+  .submitrow .btn{cursor:pointer;border:none}
+  .oknote{display:none;margin-top:14px}
+  .oknote.show{display:block}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img class="lm-light" src="assets/img/ciifa-logo.png" alt="CIIFA - Creative Industries Initiative for Africa"><img class="lm-dark" src="assets/img/ciifa-logo-dark.png" alt="CIIFA - Creative Industries Initiative for Africa"></a>
+  </div>
+</nav>
+
+<header class="hero slim">
+  <div class="wrap">
+    <div class="kicker">Team · Internal</div>
+    <h1>Build your team profile</h1>
+    <p class="lead">This takes about five minutes. What you enter here becomes your profile on the ciif.africa team page — you can see it building on the right as you type. When you're done, hit <strong>Email my profile</strong>.</p>
+  </div>
+</header>
+
+<section class="block">
+  <div class="wrap formgrid">
+    <form id="tf" autocomplete="on">
+
+      <fieldset>
+        <legend>The basics</legend>
+        <div class="field">
+          <label for="name">Full name <small>— as it should appear publicly</small></label>
+          <input type="text" id="name" required placeholder="e.g. Abigail Okonkwo">
+        </div>
+        <div class="field">
+          <label for="role">Role at CIIFA</label>
+          <input type="text" id="role" required placeholder="e.g. Community Manager, CBA for Africa">
+        </div>
+        <div class="field">
+          <label>Where you work in the ecosystem <small>— tick all that apply</small></label>
+          <div class="checks" id="teams">
+            <label><input type="checkbox" value="CIIFA Core"> CIIFA core team</label>
+            <label><input type="checkbox" value="CBA for Africa"> CBA for Africa</label>
+            <label><input type="checkbox" value="The Skill Pool"> The Skill Pool</label>
+            <label><input type="checkbox" value="Enterprise Programme"> Enterprise Programme</label>
+            <label><input type="checkbox" value="Creative Career Fair"> Creative Career Fair</label>
+            <label><input type="checkbox" value="CIIFA SafeHouse"> CIIFA SafeHouse</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="loc">City &amp; country</label>
+          <input type="text" id="loc" placeholder="e.g. Lagos, Nigeria">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your story</legend>
+        <div class="field">
+          <label for="oneliner">What you do here, in one line <span class="count" id="olcount">0/90</span></label>
+          <input type="text" id="oneliner" maxlength="90" placeholder="e.g. I make sure every CBA cohort feels like a family.">
+        </div>
+        <div class="field">
+          <label for="bio">Short bio <small>— third person, 2–3 sentences</small> <span class="count" id="biocount">0/420</span></label>
+          <textarea id="bio" maxlength="420" placeholder="e.g. Abigail has spent eight years building communities around African music, from fan clubs to executive education. Before CIIFA she..."></textarea>
+          <div class="hint">Write it the way you'd want to be introduced on a stage.</div>
+        </div>
+        <div class="field">
+          <label for="highlights">Career highlights <small>— up to 3, one per line</small></label>
+          <textarea id="highlights" rows="3" placeholder="e.g. Managed West Africa's largest artist fan community&#10;Producer, 40+ live shows"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Links &amp; contact</legend>
+        <div class="field">
+          <label for="linkedin">LinkedIn <small>(optional)</small></label>
+          <input type="url" id="linkedin" placeholder="https://linkedin.com/in/...">
+        </div>
+        <div class="field">
+          <label for="instagram">Instagram or X handle <small>(optional)</small></label>
+          <input type="text" id="instagram" placeholder="@handle">
+        </div>
+        <div class="field">
+          <label for="website">Portfolio / personal site <small>(optional)</small></label>
+          <input type="url" id="website" placeholder="https://...">
+        </div>
+        <div class="field">
+          <label for="email">Work email</label>
+          <input type="email" id="email" placeholder="you@ciif.africa">
+          <div class="hint"><label style="display:flex;gap:8px;font-weight:400"><input type="checkbox" id="showEmail" style="accent-color:var(--green)"> Show this email publicly on my profile</label></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Headshot</legend>
+        <p style="font-size:14.5px;margin-bottom:10px">Attach a photo to the email when you send this form:</p>
+        <ul style="font-size:14px;color:var(--muted);margin:0 0 12px 20px">
+          <li>Square-ish, at least 800×800px, face clearly visible</li>
+          <li>Daylight or good indoor light; any background is fine</li>
+          <li>No heavy filters — we apply one consistent treatment for everyone</li>
+        </ul>
+      </fieldset>
+
+      <div class="field agree" style="margin:4px 0 18px">
+        <label><input type="checkbox" id="consent" required> I agree that this information and my photo may be published on ciif.africa and CIIFA materials. I can ask for it to be updated or removed at any time (<a href="privacy.html" target="_blank">privacy policy</a>).</label>
+      </div>
+
+      <div class="submitrow">
+        <button type="button" class="btn primary" id="mailBtn" style="background:var(--lime);color:#0c0f0a">Email my profile ✉</button>
+        <button type="button" class="btn solid" id="dlBtn">Download profile file</button>
+      </div>
+      <div class="notice oknote" id="oknote"><strong>One more step:</strong> your email app just opened (or a file downloaded). Please <strong>attach your headshot</strong> before sending. Thank you!</div>
+    </form>
+
+    <aside class="preview">
+      <div class="plabel">Live preview — your card on ciif.africa</div>
+      <div class="pcard" id="pcard">
+        <div class="avatar" id="pavatar">?</div>
+        <h3 id="pname">Your Name</h3>
+        <div class="role" id="prole">Your role</div>
+        <div class="loc" id="ploc"></div>
+        <div class="bio" id="pbio">Your bio appears here as you type…</div>
+        <ul class="hl" id="phl"></ul>
+        <div class="chips" id="pteams"></div>
+        <div class="links" id="plinks"></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">
+      <span>© 2026 Creative Industries Initiative for Africa (CIIFA). Internal form — please don't share outside the team.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const fields = ['name','role','loc','oneliner','bio','highlights','linkedin','instagram','website','email'];
+
+  function teams(){ return [...document.querySelectorAll('#teams input:checked')].map(c => c.value); }
+
+  function render(){
+    const name = $('name').value.trim();
+    $('pname').textContent = name || 'Your Name';
+    $('pavatar').textContent = name ? name.split(/\s+/).map(w => w[0]).slice(0,2).join('').toUpperCase() : '?';
+    $('prole').textContent = $('role').value.trim() || 'Your role';
+    $('ploc').textContent = $('loc').value.trim();
+    const ol = $('oneliner').value.trim(), bio = $('bio').value.trim();
+    $('pbio').textContent = (ol ? '“' + ol + '”  ' : '') + (bio || (ol ? '' : 'Your bio appears here as you type…'));
+    $('phl').innerHTML = $('highlights').value.split('\n').map(s => s.trim()).filter(Boolean).slice(0,3).map(h => '<li>' + h.replace(/</g,'&lt;') + '</li>').join('');
+    $('pteams').innerHTML = teams().map(t => '<span class="chip">' + t + '</span>').join(' ');
+    const links = [$('linkedin').value, $('instagram').value, $('website').value, $('showEmail').checked ? $('email').value : ''].map(s => s.trim()).filter(Boolean);
+    $('plinks').textContent = links.join('  ·  ');
+    $('olcount').textContent = $('oneliner').value.length + '/90';
+    $('biocount').textContent = $('bio').value.length + '/420';
+  }
+  fields.forEach(id => $(id).addEventListener('input', render));
+  document.querySelectorAll('#teams input, #showEmail').forEach(c => c.addEventListener('change', render));
+  render();
+
+  function profile(){
+    return {
+      name: $('name').value.trim(), role: $('role').value.trim(), teams: teams(),
+      location: $('loc').value.trim(), oneliner: $('oneliner').value.trim(), bio: $('bio').value.trim(),
+      highlights: $('highlights').value.split('\n').map(s => s.trim()).filter(Boolean).slice(0,3),
+      linkedin: $('linkedin').value.trim(), instagram: $('instagram').value.trim(), website: $('website').value.trim(),
+      email: $('email').value.trim(), showEmail: $('showEmail').checked,
+      consent: $('consent').checked, submitted: new Date().toISOString().slice(0,10)
+    };
+  }
+  function guard(){
+    if (!$('name').value.trim() || !$('role').value.trim()) { alert('Please fill in your name and role first.'); return false; }
+    if (!$('consent').checked) { alert('Please tick the consent box — we can’t publish your profile without it.'); return false; }
+    return true;
+  }
+
+  $('mailBtn').addEventListener('click', function(){
+    if (!guard()) return;
+    const p = profile();
+    const body = ['TEAM PROFILE - ' + p.name, '',
+      'Role: ' + p.role, 'Teams: ' + p.teams.join(', '), 'Location: ' + p.location, '',
+      'One-liner: ' + p.oneliner, '', 'Bio:', p.bio, '',
+      'Highlights:', ...p.highlights.map(h => '- ' + h), '',
+      'LinkedIn: ' + p.linkedin, 'Instagram/X: ' + p.instagram, 'Website: ' + p.website,
+      'Email: ' + p.email + (p.showEmail ? ' (public)' : ' (private)'), '',
+      'Consent to publish: YES (' + p.submitted + ')', '',
+      '>> Remember to attach your headshot! <<'].join('\n');
+    location.href = 'mailto:info@ciif.africa?subject=' + encodeURIComponent('Team profile - ' + p.name) + '&body=' + encodeURIComponent(body);
+    $('oknote').classList.add('show');
+  });
+
+  $('dlBtn').addEventListener('click', function(){
+    if (!guard()) return;
+    const p = profile();
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(p, null, 2)], {type: 'application/json'}));
+    a.download = 'ciifa-profile-' + p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.json';
+    a.click();
+    $('oknote').classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>
