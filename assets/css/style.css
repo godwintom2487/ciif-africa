@@ -20,6 +20,10 @@
   --safe:#5aa9ff;
   --pool:#90E040;
   --amedi:#a78bfa;
+  --inv:#6d7cff;
+  --ctf:#8d3dc4;
+  --amber:#c9900f;
+  --news:#e5484d;
   --disp:'Outfit','Segoe UI Variable Display','Segoe UI',system-ui,sans-serif;
   --body:'Outfit','Segoe UI',system-ui,sans-serif;
   --r:14px;
@@ -135,6 +139,24 @@ a.card:hover{text-decoration:none;transform:translateY(-2px);transition:transfor
 .card p{font-size:15px;color:var(--muted);flex:1}
 .card .go{font-family:var(--disp);font-weight:700;font-size:14px;color:var(--green);margin-top:14px}
 a.card:hover .go{text-decoration:underline}
+
+/* ---------- front-page tiles ---------- */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:1020px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.tiles{grid-template-columns:repeat(2,1fr);gap:12px}}
+.tile{aspect-ratio:1/1;background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--pc,var(--lime));border-radius:var(--r);padding:20px;display:flex;flex-direction:column;box-shadow:var(--shadow);color:var(--fg);overflow:hidden}
+a.tile:hover{text-decoration:none;transform:translateY(-3px);transition:transform .15s;border-color:var(--pc,var(--lime))}
+.tile .tag{font-family:var(--disp);font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tile h3{font-family:var(--disp);font-weight:800;font-size:clamp(15px,1.75vw,21px);line-height:1.18;margin-top:auto}
+.tile p{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.4}
+.tile .go{font-family:var(--disp);font-weight:700;font-size:12.5px;color:var(--pc,var(--green));margin-top:8px}
+@media (max-width:480px){.tile p{display:none}.tile{padding:14px}}
+
+/* ---------- full-width action bars ---------- */
+.bar-link{display:flex;justify-content:space-between;align-items:center;gap:18px;background:var(--ink);color:#fff;border-radius:var(--r);border-left:6px solid var(--pc,var(--lime));padding:24px 28px;margin-top:16px;font-family:var(--disp);font-weight:800;font-size:clamp(18px,2.4vw,25px)}
+.bar-link small{display:block;font-family:var(--body);font-weight:500;font-size:14px;color:#b9c4b0;margin-top:4px}
+.bar-link .arrow{font-size:26px;color:var(--pc,var(--lime));flex:none}
+a.bar-link:hover{text-decoration:none;background:#1c2117}
 
 /* ---------- chips / facts ---------- */
 .chips{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}
