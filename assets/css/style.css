@@ -149,7 +149,8 @@ a.tile:hover{text-decoration:none;transform:translateY(-3px);transition:transfor
 .tile .tag{font-family:var(--disp);font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .tile h3{font-family:var(--disp);font-weight:800;font-size:clamp(15px,1.75vw,21px);line-height:1.18;margin-top:auto}
 .tile p{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.4}
-.tile .go{font-family:var(--disp);font-weight:700;font-size:12.5px;color:var(--pc,var(--green));margin-top:8px}
+.tile .go{font-family:var(--disp);font-weight:700;font-size:12.5px;color:var(--green);margin-top:8px}
+@media (prefers-color-scheme: dark){.tile .go{color:var(--pc,var(--lime))}}
 @media (max-width:480px){.tile p{display:none}.tile{padding:14px}}
 
 /* ---------- full-bleed cover grid (home) ---------- */
