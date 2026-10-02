@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Investors Session · CIIFA</title>
 <meta name="description" content="An invitation-only Lagos evening where capital meets Africa's creative industries, with verified deal flow behind it. The Skill Pool's Investor level, made physical.">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CIIFA">
+<meta property="og:title" content="The Investors Session · CIIFA">
+<meta property="og:description" content="An invitation-only Lagos evening where capital meets Africa's creative industries, with verified deal flow behind it. The Skill Pool's Investor level, made physical.">
+<meta property="og:image" content="https://godwintom2487.github.io/ciif-africa/assets/img/og-card.jpg">
+<meta property="og:url" content="https://godwintom2487.github.io/ciif-africa/programmes/investors-session.html">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
@@ -62,7 +72,29 @@
       <li>Senior operators who want first sight of what's being built</li>
     </ul>
 
-    <div class="notice"><strong>Request an invitation:</strong> seats are limited and by invitation. Write to <a href="mailto:info@ciif.africa?subject=The%20Investors%20Session">info@ciif.africa</a> with your name, organisation and interest.</div>
+    <h2 id="invite">Request an invitation</h2>
+    <p>Seats are limited and by invitation. Tell us who you are and why the room fits; the team reviews every request.</p>
+    <form class="f-form" action="https://formsubmit.co/info@ciif.africa" method="POST" style="margin-top:18px">
+      <input type="hidden" name="_subject" value="Investors Session invitation request (ciif.africa)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://godwintom2487.github.io/ciif-africa/thanks.html">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div><label for="i-name">Your name</label><input id="i-name" type="text" name="name" required></div>
+      <div><label for="i-org">Organisation / fund</label><input id="i-org" type="text" name="organisation" required></div>
+      <div><label for="i-email">Work email</label><input id="i-email" type="email" name="email" required></div>
+      <div><label for="i-role">You are</label>
+        <select id="i-role" name="profile" required>
+          <option value="">Choose the closest fit</option>
+          <option>Investor / family office</option>
+          <option>Brand</option>
+          <option>Government / institution</option>
+          <option>Senior operator</option>
+          <option>Other</option>
+        </select></div>
+      <div><label for="i-msg">Your interest in the creative economy</label><textarea id="i-msg" name="interest" placeholder="Sectors, ticket sizes, what you want first sight of..."></textarea></div>
+      <button type="submit">Request an invitation</button>
+    </form>
   </div>
 </section>
 

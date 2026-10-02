@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The CIIFA SafeHouse — CIIFA</title>
 <meta name="description" content="The CIIFA SafeHouse — a creative hub in Ikoyi, Lagos: professional recording studios, accommodation, event space and meeting rooms.">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CIIFA">
+<meta property="og:title" content="The CIIFA SafeHouse — CIIFA">
+<meta property="og:description" content="The CIIFA SafeHouse — a creative hub in Ikoyi, Lagos: professional recording studios, accommodation, event space and meeting rooms.">
+<meta property="og:image" content="https://godwintom2487.github.io/ciif-africa/assets/img/og-card.jpg">
+<meta property="og:url" content="https://godwintom2487.github.io/ciif-africa/programmes/safehouse.html">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
@@ -39,7 +49,7 @@
     <h1>The CIIFA SafeHouse</h1>
     <p class="lead">Where creativity meets comfort. A creative hub in Ikoyi, Lagos offering state-of-the-art studios, comfortable accommodation, and inspiring event spaces.</p>
     <div class="actions">
-      <a class="btn primary" href="mailto:info@ciif.africa?subject=SafeHouse%20Booking">Book a facility</a>
+      <a class="btn primary" href="#book">Book a facility</a>
       <a class="btn ghost" href="tel:+2348172560000">+234 817 256 0000</a>
     </div>
   </div>
@@ -89,11 +99,34 @@
   </div>
 </section>
 
-<section class="band">
+<section class="band" id="book">
   <div class="wrap">
+    <img src="../assets/img/safehouse-logo.png" alt="CIIFA SafeHouse" style="height:92px;width:auto;margin:0 auto 18px;filter:drop-shadow(0 0 1px rgba(255,255,255,.6))">
     <h2>Book the SafeHouse</h2>
-    <p>Tell us what you need — studio time, rooms, the lawn or the meeting room — and we'll confirm availability.</p>
-    <a class="btn primary" href="mailto:info@ciif.africa?subject=SafeHouse%20Booking">info@ciif.africa</a>
+    <p>Tell us what you need: studio time, rooms, the lawn or the meeting room, and we'll confirm availability.</p>
+    <form class="f-form" action="https://formsubmit.co/info@ciif.africa" method="POST">
+      <input type="hidden" name="_subject" value="SafeHouse booking request (ciif.africa)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://godwintom2487.github.io/ciif-africa/thanks.html">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div><label for="b-name">Your name</label><input id="b-name" type="text" name="name" required></div>
+      <div><label for="b-email">Email</label><input id="b-email" type="email" name="email" required></div>
+      <div><label for="b-phone">Phone / WhatsApp</label><input id="b-phone" type="text" name="phone"></div>
+      <div><label for="b-fac">What do you want to book?</label>
+        <select id="b-fac" name="facility" required>
+          <option value="">Choose a facility</option>
+          <option>Recording studio</option>
+          <option>Accommodation</option>
+          <option>Event space (lawn)</option>
+          <option>Meeting room</option>
+          <option>A mix / not sure yet</option>
+        </select></div>
+      <div><label for="b-dates">Date(s) you have in mind</label><input id="b-dates" type="text" name="dates" placeholder="e.g. 14-16 November, evenings"></div>
+      <div><label for="b-msg">Anything else?</label><textarea id="b-msg" name="message" placeholder="Number of people, engineer needs, budget..."></textarea></div>
+      <button type="submit">Send booking request</button>
+    </form>
+    <p style="margin-top:16px;font-size:13.5px">Prefer email? <a href="mailto:info@ciif.africa?subject=SafeHouse%20Booking" style="color:var(--lime)">info@ciif.africa</a></p>
     <p style="margin-top:18px;color:#b9c4b0">+234 817 256 0000 · 4B Onikoyi Lane, Parkview Estate, Ikoyi, Lagos</p>
   </div>
 </section>

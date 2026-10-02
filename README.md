@@ -11,6 +11,17 @@ Static multi-page site — no build step, no framework.
 - **Redeploy:** run `.\deploy.ps1 "commit message"` from this folder (commits, regenerates
   `gh-pages` via `git subtree split --prefix site`, pushes both branches; Pages rebuilds in ~1 min).
 
+### Forms (added 2026-10-03)
+Booking / partnership / invitation / contact forms post to **FormSubmit** (`formsubmit.co/info@ciif.africa`).
+**One-time activation:** the FIRST submission triggers a confirmation email to info@ciif.africa — click it
+once and all forms go live. Submissions then arrive as emails. `_next` redirects to `thanks.html` and
+carries the absolute staging URL — **update `_next` in the 4 forms (and og:url/og:image in all heads)
+to https://ciif.africa/... at cutover** (one PowerShell replace).
+
+### Analytics (pending one decision)
+Zero-code option once the domain is on Cloudflare proxy: enable **Cloudflare Web Analytics** in the CF
+dashboard. Alternative: GoatCounter/Plausible need an account + one script tag in every head.
+
 ### Cutover to ciif.africa (when approved — currently a live WordPress site is on the domain)
 
 1. Set the custom domain on Pages:

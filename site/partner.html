@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Partner With Us — CIIFA</title>
 <meta name="description" content="Sponsor, hire, co-deliver or host — how organisations partner with CIIFA to build Africa's creative economy.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CIIFA">
+<meta property="og:title" content="Partner With Us — CIIFA">
+<meta property="og:description" content="Sponsor, hire, co-deliver or host — how organisations partner with CIIFA to build Africa's creative economy.">
+<meta property="og:image" content="https://godwintom2487.github.io/ciif-africa/assets/img/og-card.jpg">
+<meta property="og:url" content="https://godwintom2487.github.io/ciif-africa/partner.html">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -85,11 +95,32 @@
   </div>
 </section>
 
-<section class="band">
+<section class="band" id="start">
   <div class="wrap">
     <h2>Start the conversation</h2>
-    <p>Tell us who you are and where you want to plug in — we'll come back with a concrete proposal, usually within a week.</p>
-    <a class="btn primary" href="mailto:info@ciif.africa?subject=Partnership%20with%20CIIFA">info@ciif.africa</a>
+    <p>Tell us who you are and where you want to plug in. We'll come back with a concrete proposal, usually within a week.</p>
+    <form class="f-form" action="https://formsubmit.co/info@ciif.africa" method="POST">
+      <input type="hidden" name="_subject" value="Partnership enquiry (ciif.africa)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://godwintom2487.github.io/ciif-africa/thanks.html">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div><label for="p-name">Your name</label><input id="p-name" type="text" name="name" required></div>
+      <div><label for="p-org">Organisation</label><input id="p-org" type="text" name="organisation" required></div>
+      <div><label for="p-email">Work email</label><input id="p-email" type="email" name="email" required></div>
+      <div><label for="p-way">How do you want to plug in?</label>
+        <select id="p-way" name="partnership_type" required>
+          <option value="">Choose a lane</option>
+          <option>Co-deliver a programme</option>
+          <option>Sponsor a cohort or a moment</option>
+          <option>Hire verified talent</option>
+          <option>Build infrastructure with us</option>
+          <option>Something else</option>
+        </select></div>
+      <div><label for="p-msg">Tell us more</label><textarea id="p-msg" name="message" placeholder="What you have in mind, timelines, the market you care about..."></textarea></div>
+      <button type="submit">Send enquiry</button>
+    </form>
+    <p style="margin-top:16px;font-size:13.5px">Prefer email? <a href="mailto:info@ciif.africa?subject=Partnership%20with%20CIIFA" style="color:var(--lime)">info@ciif.africa</a></p>
   </div>
 </section>
 
