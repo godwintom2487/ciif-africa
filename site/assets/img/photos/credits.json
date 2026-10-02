@@ -70,13 +70,18 @@
   "alt": "CIIFA SafeHouse, Ikoyi, Lagos (own photography)"
  },
  "sh-lawn": {
-  "photographer": "Patrick Langwallner",
-  "link": "https://unsplash.com/photos/a-string-of-lights-hanging-from-the-side-of-a-building-7-o7YAc0NWc",
-  "alt": "a string of lights hanging from the side of a building"
+  "photographer": "CIIFA",
+  "link": "",
+  "alt": "The CIIFA SafeHouse lawn, Ikoyi, Lagos (own photography)"
  },
  "sh-meeting": {
   "photographer": "CIIFA",
   "link": "",
   "alt": "CIIFA SafeHouse, Ikoyi, Lagos (own photography)"
+ },
+ "sh-lawn-day": {
+  "photographer": "CIIFA",
+  "link": "",
+  "alt": "The CIIFA SafeHouse lawn, Ikoyi, Lagos (own photography)"
  }
 }
