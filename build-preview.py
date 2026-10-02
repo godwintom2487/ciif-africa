@@ -12,7 +12,7 @@ PAGES = [  # (file, key, label) in nav-story order; career-fair.html is a redire
     ('programmes/skill-pool.html', 'programmes/skill-pool'), ('programmes/cba.html', 'programmes/cba'),
     ('programmes/enterprise.html', 'programmes/enterprise'), ('programmes/safehouse.html', 'programmes/safehouse'),
     ('programmes/amedi.html', 'programmes/amedi'), ('programmes/investors-session.html', 'programmes/investors-session'),
-    ('impact.html', 'impact'), ('about.html', 'about'), ('about-ctf.html', 'about-ctf'),
+    ('impact.html', 'impact'), ('about.html', 'about'), ('about-ctf.html', 'about-ctf'), ('team.html', 'team'),
     ('events.html', 'events'), ('news.html', 'news'), ('partner.html', 'partner'),
     ('contact.html', 'contact'), ('team-form.html', 'team-form'),
     ('privacy.html', 'privacy'), ('terms.html', 'terms'),
