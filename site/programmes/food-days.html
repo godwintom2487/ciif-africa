@@ -86,7 +86,9 @@
 
       <div class="paybox" id="paybox">
         <h3>Almost there, <span id="p-name"></span>.</h3>
-        <p style="font-size:15px;color:#b9c4b0">Transfer <b style="color:var(--lime)" id="p-total"></b> for <span id="p-seats"></span> to:</p>
+        <p style="font-size:15px;color:#b9c4b0">Pay <b style="color:var(--lime)" id="p-total"></b> for <span id="p-seats"></span>.</p>
+        <a class="btn primary" id="paylink" href="#" target="_blank" rel="noopener" style="display:none;margin:10px 0 4px">Pay online now →</a>
+        <p id="or-transfer" style="font-size:14px;color:#9aa694;margin-top:8px">Or transfer directly to:</p>
         <div class="acct">
           <div class="row"><span>Bank</span><b id="a-bank"></b></div>
           <div class="row"><span>Account</span><span style="display:flex;gap:10px;align-items:center"><b class="num" id="a-number"></b><button class="copybtn" id="copyacct" type="button">Copy</button></span></div>
@@ -94,7 +96,7 @@
         </div>
         <p style="font-size:14.5px;color:#b9c4b0">Then send your transfer receipt on WhatsApp to confirm your seat:</p>
         <a class="wa" id="wa-receipt" href="#">Send receipt on WhatsApp</a>
-        <p style="font-size:12.5px;color:#9aa694;margin-top:14px">No payment at the gate. Unconfirmed reservations are released.</p>
+        <p style="font-size:12.5px;color:#9aa694;margin-top:14px">No payment at the gate. Unconfirmed reservations are released within 2 hours of reservation.</p>
       </div>
 
       <div class="soldout" id="soldout">
@@ -136,6 +138,13 @@
     $('a-bank').textContent = cfg.account.bank;
     $('a-number').textContent = cfg.account.number;
     $('a-name').textContent = cfg.account.name;
+    if (cfg.paymentLink) {
+      $('paylink').href = cfg.paymentLink;
+      $('paylink').style.display = 'inline-block';
+      $('or-transfer').textContent = 'Or transfer directly to:';
+    } else {
+      $('or-transfer').textContent = 'Transfer to:';
+    }
 
     const left = Math.max(0, cfg.capacity - cfg.booked);
     $('seatfill').style.width = Math.min(100, (cfg.booked / cfg.capacity) * 100) + '%';
@@ -167,6 +176,7 @@
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify({
         _subject: 'FOOD DAYS booking: ' + name + ' (' + seats + ' seat' + (seats>1?'s':'') + ')',
+        _cc: 'gt@godwintom.com,ea@godwintom.com',
         _template: 'table',
         event: C ? (C.event + ' · ' + C.date) : 'Food Days',
         name: name, email: email, phone: phone,
