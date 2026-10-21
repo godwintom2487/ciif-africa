@@ -61,7 +61,7 @@
   <div class="wrap fd-grid">
 
     <div>
-      <img class="poster" src="../assets/img/photos/food-days-flyer.jpg" alt="On The Grill flyer: ram suya, chicken suya, grilled croaker, shawarma, suya shawarma">
+      <img class="poster" id="poster" src="../assets/img/photos/food-days-flyer.jpg" alt="On The Grill flyer: ram suya, chicken suya, grilled croaker, shawarma, suya shawarma">
     </div>
 
     <div>
@@ -130,6 +130,7 @@
     $('h-date').textContent = cfg.date;
     $('h-time').textContent = cfg.time;
     $('h-tagline').textContent = cfg.tagline;
+    if (cfg.flyer) $('poster').src = '../assets/img/photos/' + cfg.flyer;
     document.title = cfg.event + ' · Food Days · GT’s Lawn';
     $('price').innerHTML = fmt(cfg.price) + ' <small>' + (cfg.priceNote || 'per seat') + '</small>';
     $('menuchips').innerHTML = cfg.menu.map(m => '<span class="chip">' + m + '</span>').join('');
