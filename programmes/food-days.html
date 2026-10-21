@@ -131,7 +131,7 @@
     $('h-time').textContent = cfg.time;
     $('h-tagline').textContent = cfg.tagline;
     document.title = cfg.event + ' · Food Days · GT’s Lawn';
-    $('price').innerHTML = fmt(cfg.price) + ' <small>per seat · all five grills</small>';
+    $('price').innerHTML = fmt(cfg.price) + ' <small>' + (cfg.priceNote || 'per seat') + '</small>';
     $('menuchips').innerHTML = cfg.menu.map(m => '<span class="chip">' + m + '</span>').join('');
     $('sides').textContent = 'Served with: ' + cfg.sides;
     $('drinks').textContent = cfg.drinksNote;

@@ -9,10 +9,20 @@
   "booked": 0,
   "status": "open",
   "maxSeatsPerBooking": 4,
-  "menu": ["Tilapia pepper soup", "Goat meat pepper soup", "Catfish pepper soup", "Chicken pepper soup"],
+  "menu": [
+    "Tilapia pepper soup",
+    "Goat meat pepper soup",
+    "Catfish pepper soup",
+    "Chicken pepper soup"
+  ],
   "sides": "Agidi, white rice or boiled yam",
   "drinksNote": "Drinks sold separately: cocktails, mocktails and beers at the bar",
-  "account": { "bank": "Moniepoint MFB", "number": "4547030727", "name": "CIIFA SafeHouse" },
+  "account": {
+    "bank": "Moniepoint MFB",
+    "number": "4547030727",
+    "name": "CIIFA SafeHouse"
+  },
   "paymentLink": "",
-  "whatsapp": "2348064474094"
+  "whatsapp": "2348064474094",
+  "priceNote": "per seat · all four bowls"
 }
