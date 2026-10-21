@@ -6,6 +6,6 @@ param([Parameter(Mandatory=$true)][int]$Booked)
 $json = Join-Path $PSScriptRoot "site\data\food-days.json"
 $cfg = Get-Content $json -Raw | ConvertFrom-Json
 $cfg.booked = $Booked
-$cfg | ConvertTo-Json -Depth 5 | Set-Content $json -Encoding utf8
+[System.IO.File]::WriteAllText($json, ($cfg | ConvertTo-Json -Depth 5), (New-Object System.Text.UTF8Encoding $false))
 Write-Host ("booked = {0} / {1}" -f $Booked, $cfg.capacity)
 & (Join-Path $PSScriptRoot "deploy.ps1") ("Food Days: seats {0}/{1}" -f $Booked, $cfg.capacity)
