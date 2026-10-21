@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /team-form.html
 Disallow: /thanks.html
+Disallow: /programmes/food-days.html
 
 Sitemap: https://godwintom2487.github.io/ciif-africa/sitemap.xml

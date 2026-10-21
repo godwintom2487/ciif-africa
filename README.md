@@ -111,3 +111,12 @@ Lime `#90E040` (accent, never body text on white) · Deep Green `#46760F` (links
 Ink `#111418` · Paper `#f5f7f1` · font **Outfit**. Platform accents: CBA gold `#f0b448`,
 Skill Pool lime, Enterprise green `#4ade80`, Career Fair teal `#3fc1c9`, SafeHouse sky `#5aa9ff`,
 AMEDI violet `#a78bfa`. Full system: `brand/CIIFA-Brand-Guide.html`.
+
+## Food Days (private test, 2026-10-21)
+Unlisted booking page: `site/programmes/food-days.html` + config `site/data/food-days.json`
+(event, date, price, capacity, booked, status, account, whatsapp). Noindex + robots-disallowed; not linked from nav.
+Flow: form (name/email/phone/seats) -> emails the booking via FormSubmit -> reveals Moniepoint
+details + computed total + WhatsApp receipt link. At booked >= capacity (or status != "open") the page
+flips to sold out and pushes WhatsApp delivery orders.
+**Ops: after confirming transfers, run `.\update-seats.ps1 <confirmed-seat-count>`** (sets counter + deploys).
+Next event: edit the JSON (event/date/menu/flyer image) and deploy.
