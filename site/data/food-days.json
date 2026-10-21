@@ -1,8 +1,8 @@
 {
   "series": "Food Days at GT's Lawn",
-  "event": "Pepper Soup Day",
-  "tagline": "Steaming bowls under the string lights.",
-  "date": "Wednesday 28 October 2026",
+  "event": "On The Grill",
+  "tagline": "Come hungry, leave happy.",
+  "date": "Wednesday 21 October 2026",
   "time": "6:00 PM",
   "price": 38500,
   "capacity": 30,
@@ -10,12 +10,13 @@
   "status": "open",
   "maxSeatsPerBooking": 4,
   "menu": [
-    "Tilapia pepper soup",
-    "Goat meat pepper soup",
-    "Catfish pepper soup",
-    "Chicken pepper soup"
+    "Ram suya",
+    "Chicken suya",
+    "Grilled croaker",
+    "Shawarma",
+    "Suya shawarma"
   ],
-  "sides": "Agidi, white rice or boiled yam",
+  "sides": "Grilled plantain, yam fries, coleslaw & pepper sauce",
   "drinksNote": "Drinks sold separately: cocktails, mocktails and beers at the bar",
   "account": {
     "bank": "Moniepoint MFB",
@@ -24,5 +25,5 @@
   },
   "paymentLink": "",
   "whatsapp": "2348064474094",
-  "priceNote": "per seat · all four bowls"
+  "priceNote": "per seat · all five grills"
 }
