@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Food Days · GT's Lawn at the SafeHouse</title>
+<meta name="description" content="Food Days at GT's Lawn, CIIFA SafeHouse, Ikoyi. Book your seat.">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+  .fd-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:34px;align-items:start}
+  @media (max-width:900px){.fd-grid{grid-template-columns:1fr}}
+  .poster{border-radius:16px;box-shadow:var(--shadow);width:100%}
+  .seatbar{background:var(--chip);border:1px solid var(--border);border-radius:999px;height:16px;overflow:hidden;margin:10px 0 6px}
+  .seatbar i{display:block;height:100%;background:linear-gradient(90deg,var(--lime),var(--green))}
+  .seatnote{font:700 14px var(--disp)}
+  .bigprice{font:800 40px var(--disp);color:var(--green)}
+  .bigprice small{font:600 15px var(--disp);color:var(--muted)}
+  .paybox{background:var(--ink);color:#e8efe0;border-radius:16px;border-left:6px solid var(--lime);padding:26px;display:none}
+  .paybox.show{display:block}
+  .paybox h3{font:800 24px var(--disp);color:#fff;margin-bottom:4px}
+  .acct{background:#1c2117;border:1px solid #2a3122;border-radius:12px;padding:18px;margin:16px 0}
+  .acct .row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid #2a3122;font-size:15.5px}
+  .acct .row:last-child{border-bottom:none}
+  .acct b{font-family:var(--disp)}
+  .acct .num{font:800 26px var(--disp);color:var(--lime);letter-spacing:.06em}
+  .copybtn{background:var(--lime);color:#0c0f0a;border:none;border-radius:999px;font:700 13.5px var(--disp);padding:8px 16px;cursor:pointer}
+  .soldout{display:none;background:var(--ink);color:#e8efe0;border-radius:16px;border-left:6px solid var(--news);padding:30px}
+  .soldout.show{display:block}
+  .soldout h2{font:800 30px var(--disp);color:#fff}
+  .menu-chips .chip{font-size:14.5px}
+  .closedform{opacity:.45;pointer-events:none}
+  .wa{display:inline-block;background:#25D366;color:#0c2b16;font:700 15px var(--disp);padding:12px 24px;border-radius:999px;margin-top:12px}
+  .wa:hover{text-decoration:none;background:#4be084}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><img class="lm-light" src="../assets/img/ciifa-logo.png" alt="CIIFA"><img class="lm-dark" src="../assets/img/ciifa-logo-dark.png" alt="CIIFA"></a>
+    <div class="navlinks" style="display:flex">
+      <a href="safehouse.html">← The SafeHouse</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero slim prog photo" style="--img:url('../assets/img/photos/sh-lawn.jpg');--pc:var(--safe)">
+  <div class="wrap">
+    <div class="kicker" id="h-series">Food Days · GT's Lawn at the SafeHouse</div>
+    <h1 id="h-event">On The Grill</h1>
+    <p class="lead"><span id="h-date"></span> · <span id="h-time"></span> · Ikoyi, Lagos. <span id="h-tagline"></span></p>
+  </div>
+</header>
+
+<section class="block">
+  <div class="wrap fd-grid">
+
+    <div>
+      <img class="poster" src="../assets/img/photos/food-days-flyer.jpg" alt="On The Grill flyer: ram suya, chicken suya, grilled croaker, shawarma, suya shawarma">
+    </div>
+
+    <div>
+      <h2 class="title" style="font-size:26px">Book your seat</h2>
+      <div class="bigprice" id="price"></div>
+      <div class="seatbar"><i id="seatfill" style="width:0%"></i></div>
+      <div class="seatnote" id="seatnote">Checking seats…</div>
+
+      <div class="chips menu-chips" id="menuchips" style="margin-top:16px"></div>
+      <p style="font-size:14px;color:var(--muted)" id="sides"></p>
+      <p style="font-size:13.5px;color:var(--muted)" id="drinks"></p>
+
+      <form class="f-form" id="bookform" style="margin-top:18px">
+        <div><label for="f-name">Your name</label><input id="f-name" type="text" required></div>
+        <div><label for="f-email">Email</label><input id="f-email" type="email" required></div>
+        <div><label for="f-phone">Phone (WhatsApp)</label><input id="f-phone" type="tel" required placeholder="080..."></div>
+        <div><label for="f-seats">Seats</label>
+          <select id="f-seats"></select></div>
+        <button type="submit" id="bookbtn">Reserve &amp; get payment details</button>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:2px">Your seat is held when payment is confirmed. First paid, first seated.</p>
+      </form>
+
+      <div class="paybox" id="paybox">
+        <h3>Almost there, <span id="p-name"></span>.</h3>
+        <p style="font-size:15px;color:#b9c4b0">Transfer <b style="color:var(--lime)" id="p-total"></b> for <span id="p-seats"></span> to:</p>
+        <div class="acct">
+          <div class="row"><span>Bank</span><b id="a-bank"></b></div>
+          <div class="row"><span>Account</span><span style="display:flex;gap:10px;align-items:center"><b class="num" id="a-number"></b><button class="copybtn" id="copyacct" type="button">Copy</button></span></div>
+          <div class="row"><span>Name</span><b id="a-name"></b></div>
+        </div>
+        <p style="font-size:14.5px;color:#b9c4b0">Then send your transfer receipt on WhatsApp to confirm your seat:</p>
+        <a class="wa" id="wa-receipt" href="#">Send receipt on WhatsApp</a>
+        <p style="font-size:12.5px;color:#9aa694;margin-top:14px">No payment at the gate. Unconfirmed reservations are released.</p>
+      </div>
+
+      <div class="soldout" id="soldout">
+        <h2>All 30 seats are gone.</h2>
+        <p style="color:#b9c4b0;margin:8px 0 4px">This edition is fully booked. But the grill is still on: order your bowls for delivery and chop at home.</p>
+        <a class="wa" id="wa-delivery" href="#">Order delivery on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">
+      <span>© 2026 CIIFA SafeHouse · GT's Lawn · 4B Onikoyi Lane, Parkview Estate, Ikoyi, Lagos</span>
+      <span>Private event page · please don't share outside the group · <a href="../privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const fmt = n => '₦' + n.toLocaleString('en-NG');
+  let C = null;
+
+  fetch('../data/food-days.json?cb=' + Date.now()).then(r => r.json()).then(cfg => {
+    C = cfg;
+    $('h-series').textContent = 'Food Days · GT’s Lawn at the SafeHouse';
+    $('h-event').textContent = cfg.event;
+    $('h-date').textContent = cfg.date;
+    $('h-time').textContent = cfg.time;
+    $('h-tagline').textContent = cfg.tagline;
+    document.title = cfg.event + ' · Food Days · GT’s Lawn';
+    $('price').innerHTML = fmt(cfg.price) + ' <small>per seat · all five grills</small>';
+    $('menuchips').innerHTML = cfg.menu.map(m => '<span class="chip">' + m + '</span>').join('');
+    $('sides').textContent = 'Served with: ' + cfg.sides;
+    $('drinks').textContent = cfg.drinksNote;
+    $('a-bank').textContent = cfg.account.bank;
+    $('a-number').textContent = cfg.account.number;
+    $('a-name').textContent = cfg.account.name;
+
+    const left = Math.max(0, cfg.capacity - cfg.booked);
+    $('seatfill').style.width = Math.min(100, (cfg.booked / cfg.capacity) * 100) + '%';
+    const maxSel = Math.min(cfg.maxSeatsPerBooking, Math.max(left, 1));
+    $('f-seats').innerHTML = Array.from({length: maxSel}, (_, i) =>
+      '<option value="' + (i+1) + '">' + (i+1) + ' seat' + (i ? 's' : '') + ' · ' + fmt(cfg.price * (i+1)) + '</option>').join('');
+
+    if (cfg.status !== 'open' || left <= 0) {
+      $('seatnote').textContent = 'Fully booked.';
+      $('bookform').classList.add('closedform');
+      $('soldout').classList.add('show');
+      $('wa-delivery').href = 'https://wa.me/' + cfg.whatsapp + '?text=' +
+        encodeURIComponent('Hello! ' + cfg.event + ' is sold out. I’d like to order Food Days bowls for DELIVERY instead. My name is ');
+    } else {
+      $('seatnote').textContent = left + ' of ' + cfg.capacity + ' seats left' + (left <= 5 ? ' · almost gone' : '');
+    }
+  }).catch(() => { $('seatnote').textContent = 'Could not load seat count. You can still book below.'; });
+
+  $('bookform').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = $('f-name').value.trim(), email = $('f-email').value.trim(),
+          phone = $('f-phone').value.trim(), seats = parseInt($('f-seats').value || '1', 10);
+    if (!name || !email || !phone) return;
+    const total = (C ? C.price : 38500) * seats;
+
+    // record the reservation (email to the team); never block payment details on it
+    fetch('https://formsubmit.co/ajax/info@ciif.africa', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({
+        _subject: 'FOOD DAYS booking: ' + name + ' (' + seats + ' seat' + (seats>1?'s':'') + ')',
+        _template: 'table',
+        event: C ? (C.event + ' · ' + C.date) : 'Food Days',
+        name: name, email: email, phone: phone,
+        seats: seats, total: total.toLocaleString('en-NG')
+      })
+    }).catch(function(){});
+
+    $('p-name').textContent = name.split(' ')[0];
+    $('p-total').textContent = fmt(total);
+    $('p-seats').textContent = seats + ' seat' + (seats > 1 ? 's' : '');
+    $('wa-receipt').href = 'https://wa.me/' + (C ? C.whatsapp : '2348064474094') + '?text=' +
+      encodeURIComponent('Hello! I’ve booked ' + seats + ' seat' + (seats>1?'s':'') + ' for ' +
+        (C ? C.event : 'Food Days') + ' (' + name + ', ' + phone + '). Here is my transfer receipt:');
+    $('paybox').classList.add('show');
+    $('bookbtn').textContent = 'Reservation noted ✓';
+    $('bookbtn').disabled = true;
+    $('paybox').scrollIntoView({behavior: 'smooth'});
+  });
+
+  $('copyacct').addEventListener('click', function(){
+    const n = $('a-number').textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(n) : Promise.reject()).then(
+      () => { this.textContent = 'Copied ✓'; setTimeout(() => this.textContent = 'Copy', 1800); },
+      () => { this.textContent = n; }
+    );
+  });
+})();
+</script>
+</body>
+</html>
