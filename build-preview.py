@@ -89,7 +89,7 @@ doc = f'''<!DOCTYPE html>
 </head>
 <body>
 {chr(10).join(sections)}
-<div id="pvbadge"><b>CIIFA</b> website · preview copy · {today} · live: godwintom2487.github.io/ciif-africa</div>
+<div id="pvbadge"><b>CIIFA</b> website · preview copy · {today} · live: ciif.africa</div>
 <script>
 (function(){{
   function show(hash){{
