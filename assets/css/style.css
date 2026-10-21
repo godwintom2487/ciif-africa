@@ -198,8 +198,10 @@ a.bar-link:hover{text-decoration:none;background:#1c2117}
 .price small{display:block;font-weight:500;font-size:12.5px;color:var(--muted);margin-top:2px}
 
 /* ---------- partner logo chips ---------- */
-.plogos{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
-.plogo{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 10px;text-align:center;font:600 14px var(--disp);color:var(--muted)}
+.plogos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.plogo{background:#fff;border:1px solid var(--border);border-radius:12px;min-height:78px;display:flex;align-items:center;justify-content:center;padding:14px 16px;text-align:center;font:700 14px var(--disp);color:#5d6470}
+.plogo img{max-height:42px;max-width:140px;width:auto;height:auto;filter:grayscale(1);opacity:.85;transition:filter .2s,opacity .2s}
+.plogo:hover img{filter:none;opacity:1}
 
 /* ---------- prose (inner pages) ---------- */
 .prose{max-width:70ch}
