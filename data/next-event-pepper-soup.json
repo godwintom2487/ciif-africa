@@ -1,0 +1,18 @@
+{
+  "series": "Food Days at GT's Lawn",
+  "event": "Pepper Soup Day",
+  "tagline": "Steaming bowls under the string lights.",
+  "date": "Wednesday 28 October 2026",
+  "time": "6:00 PM",
+  "price": 38500,
+  "capacity": 30,
+  "booked": 0,
+  "status": "open",
+  "maxSeatsPerBooking": 4,
+  "menu": ["Tilapia pepper soup", "Goat meat pepper soup", "Catfish pepper soup", "Chicken pepper soup"],
+  "sides": "Agidi, white rice or boiled yam",
+  "drinksNote": "Drinks sold separately: cocktails, mocktails and beers at the bar",
+  "account": { "bank": "Moniepoint MFB", "number": "4547030727", "name": "CIIFA SafeHouse" },
+  "paymentLink": "",
+  "whatsapp": "2348064474094"
+}
