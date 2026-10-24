@@ -1,22 +1,21 @@
 {
   "series": "Food Days at GT's Lawn",
-  "event": "On The Grill",
-  "tagline": "Come hungry, leave happy.",
-  "date": "Wednesday 21 October 2026",
+  "event": "Peppersoup Night",
+  "tagline": "Steaming bowls under the string lights.",
+  "date": "Wednesday 28 October 2026",
   "time": "6:00 PM",
-  "price": 38500,
+  "price": 45000,
   "capacity": 30,
-  "booked": 15,
+  "booked": 0,
   "status": "open",
   "maxSeatsPerBooking": 4,
   "menu": [
-    "Ram suya",
-    "Chicken suya",
-    "Grilled croaker",
-    "Shawarma",
-    "Suya shawarma"
+    "Goat meat pepper soup",
+    "Turkey pepper soup",
+    "Chicken pepper soup",
+    "Fish pepper soup"
   ],
-  "sides": "Grilled plantain, yam fries, coleslaw & pepper sauce",
+  "sides": "Boiled yam or rice",
   "drinksNote": "Drinks sold separately: cocktails, mocktails and beers at the bar",
   "account": {
     "bank": "Moniepoint MFB",
@@ -25,6 +24,6 @@
   },
   "paymentLink": "",
   "whatsapp": "2349041995624",
-  "priceNote": "per seat Â· all five grills",
-  "flyer": "food-days-flyer-onthegrill-v2.jpg"
+  "priceNote": "per seat · all four bowls",
+  "flyer": "food-days-flyer-peppersoup-v2.jpg"
 }
